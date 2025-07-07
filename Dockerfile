@@ -1,6 +1,7 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc
+FROM accetto/ubuntu-vnc-xfce
 
-LABEL maintainer="sebastiansemua"
+# Auto login tanpa password
+ENV VNC_PW=""
 
-# Hapus password agar auto login
-RUN sed -i 's/^PASSWORD=.*$/PASSWORD=/' /startup.sh
+# Optional: tambahkan software
+RUN apt update && apt install -y firefox
