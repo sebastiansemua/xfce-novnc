@@ -1,9 +1,9 @@
-version: '3.8'
+version: "3.8"
 
 services:
   cloudpanel:
-    image: sebastiansemua/cloudpanel:latest
-    container_name: cloudpanel-desktop
+    build: .
+    container_name: cloudpanel-app
     ports:
-      - "8080:8080"
-    restart: always
+      - "8080:80"
+    restart: unless-stopped
