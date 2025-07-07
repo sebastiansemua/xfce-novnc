@@ -25,9 +25,9 @@ RUN echo "#!/bin/bash\nxrdb $HOME/.Xresources\nstartxfce4 &" > ~/.vnc/xstartup \
 
 USER root
 
-COPY startup.sh /startup.sh
-RUN chmod +x /startup.sh
+COPY startup.sh /entry.sh
+RUN chmod +x /entry.sh
 
 EXPOSE 8080
 
-CMD ["/startup.sh"]
+CMD ["/entry.sh"]
